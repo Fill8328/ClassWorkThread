@@ -3,14 +3,24 @@ package fill.jma;
 public class Main {
 
     public static void main(String[] args) {
-        Thread t = new TalkThread( 5, "bitch");
-        Runnable r = new WalkThread(5);
-        Thread e = new Thread(r);
-        t.setPriority(Thread.MAX_PRIORITY);
-        t.run();
-        e.run();
-        t.start();
-        e.start();
+
+        ExecutorServiceDemo executorServiceDemo = new ExecutorServiceDemo();
+        ExecutorServiceDemo.demo();
+
+
+
+
+
+
+
+//        Thread t = new TalkThread( 5, "bitch");
+//        Runnable r = new WalkThread(5);
+//        Thread e = new Thread(r);
+//        t.setPriority(Thread.MAX_PRIORITY);
+//        t.run();
+//        e.run();
+//        t.start();
+//        e.start();
 
 
         /* синхронизация бывает блокирующая и не блокирующая
@@ -30,7 +40,7 @@ public class Main {
          .yielt() - в текушей операции все сделанно можно выполнять другие потоки того же приоритета
          .sleep() - останавливает поток на время но не освобождает обьект блокировки Time.DAYS.sleep()
          .wait() - спит но снимает блокировку с обьекта можно ждать пока не пнут с помощью .notifyAll .notify
-         .join() - 
+         .join() - блокирует работу потоков до тех пока не закончит работу вызывающий
 
 
          */
